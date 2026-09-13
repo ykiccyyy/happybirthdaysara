@@ -1,0 +1,1860 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Sara ♡</title>
+
+
+<style>
+
+/* =========================================================
+   🎨 COLOURS
+========================================================= */
+
+:root {
+    --pink: #ff9fb5;
+    --pink-light: #ffb7c8;
+    --pink-dark: #ff7e9d;
+    --mint: #68d8c7;
+    --text: #4b4b4b;
+}
+
+
+/* =========================================================
+   🌸 BASIC
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    color: var(--text);
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at 12% 10%,
+            #ffdce2 0 9%,
+            transparent 10%
+        ),
+        radial-gradient(
+            circle at 85% 8%,
+            #dceff2 0 10%,
+            transparent 11%
+        ),
+        linear-gradient(
+            180deg,
+            #fff8f9,
+            #fffdfd
+        );
+}
+
+
+/* =========================================================
+   🎈 BACKGROUND BALLOONS
+========================================================= */
+
+.balloons {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.balloon {
+    position: absolute;
+    width: 120px;
+    height: 150px;
+    border-radius: 50%;
+    opacity: 0.42;
+}
+
+.balloon::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    height: 220px;
+    border-left: 1px solid #aaa;
+}
+
+.b1 {
+    left: -35px;
+    top: 15%;
+    background: #f4d4d9;
+}
+
+.b2 {
+    right: -35px;
+    top: 10%;
+    background: #d5edf0;
+}
+
+.b3 {
+    left: 8%;
+    bottom: -55px;
+    background: #d1e9ed;
+}
+
+.b4 {
+    right: 8%;
+    bottom: -55px;
+    background: #f3d4d8;
+}
+
+
+/* =========================================================
+   🎀 CONFETTI
+========================================================= */
+
+#confetti {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 50;
+}
+
+.conf {
+    position: absolute;
+    top: -30px;
+    width: 8px;
+    height: 14px;
+    border-radius: 3px;
+    opacity: 0.85;
+
+    animation:
+        fall 4.5s linear forwards;
+}
+
+.conf:nth-child(3n) {
+    width: 12px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.conf:nth-child(4n) {
+    width: 6px;
+    height: 18px;
+}
+
+@keyframes fall {
+
+    0% {
+        transform:
+            translateY(-30px)
+            rotate(0deg);
+    }
+
+    100% {
+        transform:
+            translateY(115vh)
+            rotate(720deg);
+    }
+
+}
+
+
+/* =========================================================
+   📦 MAIN WEBSITE
+========================================================= */
+
+.app {
+    position: relative;
+    z-index: 2;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px 15px;
+}
+
+.panel {
+
+    width: min(610px, 94vw);
+
+    min-height: 600px;
+
+    border:
+        4px solid
+        var(--pink-light);
+
+    border-radius: 35px;
+
+    background:
+        rgba(255,255,255,0.90);
+
+    box-shadow:
+        0 20px 60px
+        rgba(255,143,169,0.20);
+
+    padding:
+        35px 30px 45px;
+
+    text-align: center;
+
+    backdrop-filter: blur(7px);
+}
+
+
+/* =========================================================
+   📄 PAGES
+========================================================= */
+
+.screen {
+    display: none;
+    animation: pageIn 0.5s ease;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes pageIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   🖼️ PICTURE
+========================================================= */
+
+.picture-box {
+
+    width: 250px;
+    height: 250px;
+
+    margin:
+        0 auto 28px;
+
+    border:
+        6px solid
+        var(--pink-light);
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    background: #fff7f9;
+
+    box-shadow:
+        0 10px 30px
+        rgba(255,150,175,0.20);
+}
+
+.picture-box img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================================================
+   💗 TITLE
+========================================================= */
+
+.title {
+
+    color: var(--pink);
+
+    font-size:
+        clamp(38px, 8vw, 56px);
+
+    line-height: 1.05;
+
+    font-weight: 900;
+
+    margin: 10px 0 5px;
+
+    text-shadow:
+        3px 3px 0 #ffdbe3;
+}
+
+
+/* =========================================================
+   💌 BY CORY
+========================================================= */
+
+.by {
+
+    color: var(--pink);
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    margin: 8px 0 25px;
+}
+
+
+/* =========================================================
+   💬 INSTRUCTIONS
+========================================================= */
+
+.instructions {
+
+    color: var(--pink);
+
+    font-size: 21px;
+
+    font-weight: bold;
+
+    margin:
+        15px 0 20px;
+}
+
+
+/* =========================================================
+   🔘 NEXT BUTTON
+========================================================= */
+
+.btn {
+
+    border: none;
+
+    border-radius: 50px;
+
+    padding:
+        17px 42px;
+
+    background:
+        var(--pink);
+
+    color: white;
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px
+        rgba(255,145,170,0.30);
+
+    transition:
+        transform 0.2s;
+}
+
+.btn:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.02);
+}
+
+.btn:active {
+
+    transform:
+        scale(0.94);
+}
+
+
+/* =========================================================
+   🎵 MUSIC
+========================================================= */
+
+.music-control {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 24px;
+
+    color: var(--pink);
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+.volume-slider {
+
+    width: 135px;
+
+    accent-color:
+        var(--pink);
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   ✉️ ENVELOPE BOX
+========================================================= */
+
+.envelope-box {
+
+    width:
+        min(440px, 90%);
+
+    height: 370px;
+
+    margin:
+        0 auto 25px;
+
+    border:
+        6px solid
+        var(--pink-light);
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,0.75);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    box-shadow:
+        0 10px 30px
+        rgba(255,150,175,0.18);
+}
+
+
+/* =========================================================
+   ✉️ ENVELOPE
+========================================================= */
+
+.envelope {
+
+    position: relative;
+
+    width: 360px;
+    height: 230px;
+
+    background: #f4eee0;
+
+    border:
+        2px solid
+        #ded5c2;
+
+    box-shadow:
+        0 12px 25px
+        rgba(0,0,0,0.12);
+}
+
+
+.envelope::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            35deg,
+            transparent 49%,
+            #ded5c2 50%,
+            transparent 51%
+        );
+}
+
+
+.envelope::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            -35deg,
+            transparent 49%,
+            #ded5c2 50%,
+            transparent 51%
+        );
+
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   ✉️ ENVELOPE FLAP
+========================================================= */
+
+.envelope-flap {
+
+    position: absolute;
+
+    top: -2px;
+    left: -2px;
+
+    width: 360px;
+    height: 150px;
+
+    background: #f6f0e3;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+    border-bottom:
+        2px solid
+        #d8cfbd;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   💗 WAX SEAL
+========================================================= */
+
+.wax-seal {
+
+    position: absolute;
+
+    z-index: 5;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: 78px;
+    height: 78px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #ff9fb5,
+            #e9819d
+        );
+
+    border:
+        5px solid
+        #f7b6c5;
+
+    box-shadow:
+        0 5px 12px
+        rgba(180,80,110,0.25);
+
+    color: white;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 34px;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   💗 ENVELOPE TEXT
+========================================================= */
+
+.envelope-title {
+
+    color: var(--pink);
+
+    font-size:
+        clamp(30px, 7vw, 43px);
+
+    font-weight: 900;
+
+    margin:
+        10px 0 5px;
+
+    text-shadow:
+        2px 2px 0 #ffdbe3;
+}
+
+
+.envelope-kaomoji {
+
+    color: var(--pink);
+
+    font-size: 25px;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   🔘 BUTTON AREA
+========================================================= */
+
+.envelope-buttons {
+
+    position: relative;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    gap: 40px;
+
+    min-height: 80px;
+}
+
+
+/* =========================================================
+   💗 OPEN BUTTON
+========================================================= */
+
+.open-button {
+
+    border: none;
+
+    border-radius: 50px;
+
+    padding:
+        16px 43px;
+
+    background:
+        var(--pink);
+
+    color: white;
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px
+        rgba(255,145,170,0.30);
+
+    transition:
+        transform 0.2s;
+}
+
+.open-button:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
+}
+
+.open-button:active {
+
+    transform:
+        scale(0.94);
+}
+
+
+/* =========================================================
+   💀 NO BUTTON
+========================================================= */
+
+.no-button {
+
+    border: none;
+
+    border-radius: 50px;
+
+    padding:
+        16px 43px;
+
+    background:
+        var(--mint);
+
+    color: white;
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px
+        rgba(80,190,175,0.25);
+
+    position: relative;
+
+    z-index: 100;
+
+    white-space: nowrap;
+
+    transition:
+        left 0.18s ease,
+        top 0.18s ease,
+        transform 0.18s ease;
+}
+
+
+/* =========================================================
+   💌 LETTER
+========================================================= */
+
+.message-card {
+
+    text-align: left;
+
+    border:
+        4px solid
+        var(--pink-light);
+
+    border-radius: 25px;
+
+    padding:
+        28px 30px;
+
+    background:
+        rgba(255,255,255,0.95);
+
+    max-height:
+        60vh;
+
+    overflow-y:
+        auto;
+}
+
+
+.message-card p {
+
+    font-size: 20px;
+
+    line-height: 1.6;
+
+    margin:
+        0 0 20px;
+
+    font-weight: 600;
+}
+
+
+.message-card .hello {
+
+    color:
+        var(--pink);
+
+    font-size: 27px;
+}
+
+
+.signature {
+
+    text-align: right;
+
+    color:
+        var(--pink);
+
+    font-size: 30px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   ⬅️ BACK BUTTON
+========================================================= */
+
+.back-button {
+
+    margin-top: 25px;
+
+    border: none;
+
+    border-radius: 40px;
+
+    padding:
+        12px 25px;
+
+    background:
+        #ffe1e8;
+
+    color:
+        var(--pink);
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   📱 MOBILE
+========================================================= */
+
+@media(max-width:600px) {
+
+    .app {
+        padding:
+            35px 10px;
+    }
+
+    .panel {
+        padding:
+            28px 17px 38px;
+    }
+
+    .picture-box {
+        width: 215px;
+        height: 215px;
+    }
+
+    .title {
+        font-size: 42px;
+    }
+
+    .instructions {
+        font-size: 19px;
+    }
+
+    .btn {
+        font-size: 21px;
+        padding:
+            15px 34px;
+    }
+
+    .envelope-box {
+        height: 300px;
+    }
+
+    .envelope {
+        width: 280px;
+        height: 180px;
+    }
+
+    .envelope-flap {
+        width: 280px;
+        height: 120px;
+    }
+
+    .wax-seal {
+        width: 65px;
+        height: 65px;
+        font-size: 28px;
+    }
+
+    .envelope-buttons {
+        gap: 15px;
+    }
+
+    .open-button,
+    .no-button {
+        font-size: 20px;
+        padding:
+            14px 27px;
+    }
+
+    .message-card {
+        padding:
+            22px 18px;
+    }
+
+    .message-card p {
+        font-size: 18px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     🎈 BACKGROUND
+===================================================== -->
+
+<div class="balloons">
+
+    <div class="balloon b1"></div>
+    <div class="balloon b2"></div>
+    <div class="balloon b3"></div>
+    <div class="balloon b4"></div>
+
+</div>
+
+
+<!-- =====================================================
+     🎀 CONFETTI
+===================================================== -->
+
+<div id="confetti"></div>
+
+
+<!-- =====================================================
+     📦 WEBSITE
+===================================================== -->
+
+<main class="app">
+
+<div class="panel">
+
+
+<!-- =====================================================
+     💗 PAGE 1
+===================================================== -->
+
+<section
+    class="screen active"
+    id="page1"
+>
+
+
+    <!-- 🖼️ CHANGE YOUR PICTURE HERE -->
+
+    <div class="picture-box">
+
+        <img
+            src="birthday-picture.jpg"
+            alt="Birthday picture"
+        >
+
+    </div>
+
+
+    <!-- 💗 NAME -->
+
+    <h1 class="title">
+
+        Happy Birthday,<br>
+
+        Sara &lt;3
+
+    </h1>
+
+
+    <!-- 💌 YOUR NAME -->
+
+    <div class="by">
+
+        By Cory
+
+    </div>
+
+
+    <!-- 💬 TEXT -->
+
+    <div class="instructions">
+
+        Click the next button!! (つ◕ヮ◕)つ❤️
+
+    </div>
+
+
+    <!-- ➡️ NEXT -->
+
+    <button
+        class="btn"
+        id="nextButton"
+    >
+
+        Next!! ~w~
+
+    </button>
+
+
+    <!-- 🎵 VOLUME -->
+
+    <div class="music-control">
+
+        <span>🎵</span>
+
+        <input
+            type="range"
+            id="volumeSlider"
+            class="volume-slider"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0.10"
+        >
+
+        <span>🔊</span>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     ✉️ PAGE 2 — ENVELOPE
+===================================================== -->
+
+<section
+    class="screen"
+    id="page2"
+>
+
+
+    <div class="envelope-box">
+
+        <div class="envelope">
+
+            <div class="envelope-flap"></div>
+
+            <div class="wax-seal">
+
+                S
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <h1 class="envelope-title">
+
+        Do you want to open it?
+
+    </h1>
+
+
+    <div class="envelope-kaomoji">
+
+        " ヾ(≧▽≦)ﾉ "
+
+    </div>
+
+
+    <div
+        class="envelope-buttons"
+        id="envelopeButtons"
+    >
+
+        <!-- 💗 THIS OPENS THE LETTER -->
+
+        <button
+            class="open-button"
+            id="openLetter"
+        >
+
+            Open it
+
+        </button>
+
+
+        <!-- 💀 THIS ONE RUNS AWAY -->
+
+        <button
+            class="no-button"
+            id="noButton"
+        >
+
+            No ty
+
+        </button>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     💌 PAGE 3 — LETTER
+===================================================== -->
+
+<section
+    class="screen"
+    id="page3"
+>
+
+
+    <h1 class="title">
+
+        Ooo.. A message ❤️
+
+    </h1>
+
+
+    <div class="message-card">
+
+
+        <p class="hello">
+
+            Happy birthday Sara ❤️
+
+        </p>
+
+
+        <p>
+
+            Firstly I love u a lot even tho u rage bait me
+            and make silly jokes about my English words
+            and pronunciations.
+
+        </p>
+
+
+        <p>
+
+            I’m genuinely so grateful to have such a kind
+            and caring person in my life. I really appreciate
+            all the gifts you’ve given me too, even tho I
+            haven’t been able to gift you anything back.
+            It honestly means a lot to me.
+
+        </p>
+
+
+        <p>
+
+            There’s been so many times where I’ve become
+            moody, slept early or haven’t talked to you much
+            that day, but even after all that you still care
+            about me and support me, especially through my
+            last year of school.
+
+        </p>
+
+
+        <p>
+
+            I honestly don’t know if I could’ve enjoyed this
+            year as much as I have without you being there.
+
+        </p>
+
+
+        <p>
+
+            Every time I see a notification from you it
+            honestly makes me jump
+            <em>(sarcastic)</em>,
+            but at the same time it makes me really happy.
+
+        </p>
+
+
+        <p>
+
+            We’ve definitely had our ups and downs, but even
+            through everything, I truly do love you.
+
+        </p>
+
+
+        <p>
+
+            I’m really happy that I get to be a part of your
+            birthday in some way, shape or form.
+
+        </p>
+
+
+        <p>
+
+            I’m sorry I can’t gift you anything, but believe
+            me, if I had the money I’d be buying you the
+            whole world.
+
+        </p>
+
+
+        <p>
+
+            I love you lots Sara ❤️
+
+        </p>
+
+
+        <div class="signature">
+
+            From Cory ♡
+
+        </div>
+
+
+    </div>
+
+
+    <button
+        class="back-button"
+        id="backButton"
+    >
+
+        ← Back
+
+    </button>
+
+
+</section>
+
+
+</div>
+
+</main>
+
+
+
+<!-- =====================================================
+     🎵 MUSIC
+
+     PUT YOUR MUSIC FILE IN THE SAME FOLDER.
+
+     Rename it:
+
+     song.mp3
+
+===================================================== -->
+
+<audio
+    id="birthdayMusic"
+    loop
+>
+
+    <source
+        src="song.mp3"
+        type="audio/mpeg"
+    >
+
+</audio>
+
+
+
+<script>
+
+
+/* =========================================================
+   🎵 MUSIC
+========================================================= */
+
+const music =
+    document.getElementById(
+        "birthdayMusic"
+    );
+
+
+/*
+    DEFAULT VOLUME = 10%
+
+    You can change this:
+
+    0.05 = 5%
+    0.10 = 10%
+    0.20 = 20%
+    0.50 = 50%
+*/
+
+music.volume = 0.10;
+
+
+
+/* =========================================================
+   🎚️ VOLUME SLIDER
+========================================================= */
+
+const volumeSlider =
+    document.getElementById(
+        "volumeSlider"
+    );
+
+
+volumeSlider.addEventListener(
+    "input",
+    function() {
+
+        music.volume =
+            Number(
+                volumeSlider.value
+            );
+
+    }
+);
+
+
+
+/* =========================================================
+   🎵 START MUSIC
+========================================================= */
+
+function startMusic() {
+
+    music.play().catch(() => {
+
+        /*
+            Some browsers block autoplay.
+
+            If that happens, the first tap
+            on the website starts the music.
+        */
+
+        const startAfterTap = () => {
+
+            music.play();
+
+        };
+
+        document.addEventListener(
+            "pointerdown",
+            startAfterTap,
+            {
+                once: true
+            }
+        );
+
+    });
+
+}
+
+
+
+/* =========================================================
+   🎀 CONFETTI
+========================================================= */
+
+let confettiInterval = null;
+
+
+function createConfetti(
+    amount = 25
+) {
+
+    const box =
+        document.getElementById(
+            "confetti"
+        );
+
+
+    const pinks = [
+
+        "#ff9fb5",
+        "#ffb7c8",
+        "#ffd2dc",
+        "#ff8fa8",
+        "#ffe1e8"
+
+    ];
+
+
+    for (
+        let i = 0;
+        i < amount;
+        i++
+    ) {
+
+
+        const piece =
+            document.createElement(
+                "span"
+            );
+
+
+        piece.className =
+            "conf";
+
+
+        piece.style.left =
+            Math.random() * 100 + "%";
+
+
+        piece.style.top =
+            (-20 - Math.random() * 100)
+            + "px";
+
+
+        piece.style.background =
+            pinks[
+                Math.floor(
+                    Math.random()
+                    * pinks.length
+                )
+            ];
+
+
+        piece.style.animationDelay =
+            Math.random() * 1.5
+            + "s";
+
+
+        piece.style.animationDuration =
+            (3.5 + Math.random() * 2)
+            + "s";
+
+
+        box.appendChild(
+            piece
+        );
+
+
+        setTimeout(
+            () => {
+
+                piece.remove();
+
+            },
+            6500
+        );
+
+    }
+
+}
+
+
+
+/* =========================================================
+   🎀 START CONTINUOUS CONFETTI
+========================================================= */
+
+function startConfetti() {
+
+    /*
+        Don't create multiple
+        confetti timers.
+    */
+
+    if (
+        confettiInterval !== null
+    ) {
+
+        return;
+
+    }
+
+
+    /*
+        Big first burst.
+    */
+
+    createConfetti(55);
+
+
+    /*
+        Continue forever until
+        the letter is opened.
+    */
+
+    confettiInterval =
+        setInterval(
+            () => {
+
+                createConfetti(30);
+
+            },
+            850
+        );
+
+}
+
+
+
+/* =========================================================
+   🛑 STOP CONFETTI
+========================================================= */
+
+function stopConfetti() {
+
+    if (
+        confettiInterval !== null
+    ) {
+
+        clearInterval(
+            confettiInterval
+        );
+
+        confettiInterval = null;
+
+    }
+
+
+    document
+        .getElementById("confetti")
+        .innerHTML = "";
+
+}
+
+
+
+/* =========================================================
+   🔊 CUTE CLICK SOUND
+========================================================= */
+
+function clickSound() {
+
+    const AudioContext =
+        window.AudioContext ||
+        window.webkitAudioContext;
+
+
+    if (!AudioContext) {
+        return;
+    }
+
+
+    const audioContext =
+        new AudioContext();
+
+
+    const oscillator =
+        audioContext.createOscillator();
+
+
+    const gain =
+        audioContext.createGain();
+
+
+    oscillator.type =
+        "sine";
+
+
+    oscillator.frequency.setValueAtTime(
+        600,
+        audioContext.currentTime
+    );
+
+
+    oscillator.frequency.exponentialRampToValueAtTime(
+        900,
+        audioContext.currentTime + 0.08
+    );
+
+
+    gain.gain.setValueAtTime(
+        0.07,
+        audioContext.currentTime
+    );
+
+
+    gain.gain.exponentialRampToValueAtTime(
+        0.001,
+        audioContext.currentTime + 0.12
+    );
+
+
+    oscillator.connect(
+        gain
+    );
+
+
+    gain.connect(
+        audioContext.destination
+    );
+
+
+    oscillator.start();
+
+
+    oscillator.stop(
+        audioContext.currentTime
+        + 0.12
+    );
+
+}
+
+
+
+/* =========================================================
+   📄 GET PAGES
+========================================================= */
+
+const page1 =
+    document.getElementById(
+        "page1"
+    );
+
+
+const page2 =
+    document.getElementById(
+        "page2"
+    );
+
+
+const page3 =
+    document.getElementById(
+        "page3"
+    );
+
+
+
+/* =========================================================
+   📄 SHOW PAGE
+========================================================= */
+
+function showPage(page) {
+
+    page1.classList.remove(
+        "active"
+    );
+
+    page2.classList.remove(
+        "active"
+    );
+
+    page3.classList.remove(
+        "active"
+    );
+
+
+    if (page === 1) {
+
+        page1.classList.add(
+            "active"
+        );
+
+        /*
+            Confetti stays ON.
+        */
+
+        startConfetti();
+
+    }
+
+
+    if (page === 2) {
+
+        page2.classList.add(
+            "active"
+        );
+
+        /*
+            IMPORTANT:
+
+            Do NOT stop the confetti here.
+
+            It continues from Page 1.
+        */
+
+        startConfetti();
+
+    }
+
+
+    if (page === 3) {
+
+        page3.classList.add(
+            "active"
+        );
+
+        /*
+            ONLY the letter stops
+            the confetti.
+        */
+
+        stopConfetti();
+
+    }
+
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+}
+
+
+
+/* =========================================================
+   🎉 WEBSITE START
+========================================================= */
+
+window.addEventListener(
+    "load",
+    function() {
+
+        /*
+            Start confetti immediately.
+        */
+
+        startConfetti();
+
+
+        /*
+            Try to start music.
+        */
+
+        startMusic();
+
+    }
+);
+
+
+
+/* =========================================================
+   ➡️ NEXT BUTTON
+========================================================= */
+
+document
+    .getElementById(
+        "nextButton"
+    )
+    .addEventListener(
+        "click",
+        function() {
+
+            clickSound();
+
+            /*
+                Music is also guaranteed
+                to try playing after a click.
+            */
+
+            music.play().catch(() => {});
+
+            showPage(2);
+
+        }
+    );
+
+
+
+/* =========================================================
+   💌 OPEN LETTER
+========================================================= */
+
+document
+    .getElementById(
+        "openLetter"
+    )
+    .addEventListener(
+        "click",
+        function() {
+
+            clickSound();
+
+            showPage(3);
+
+        }
+    );
+
+
+
+/* =========================================================
+   💀 NO TY BUTTON
+========================================================= */
+
+const noButton =
+    document.getElementById("noButton");
+
+let noClicks = 0;
+
+const funnyMessages = [
+    "nope",
+    "nice try 😭",
+    "u can't say no",
+    "are u sure? 👀",
+    "think again...",
+    "NOPE 💀",
+    "just click Open it",
+    "why 😭",
+    "click Open it",
+    "you can't say no",
+    "OPEN ITTT ❤️"
+];
+
+
+/* =========================================================
+   😭 CHANGE TEXT WHEN CLICKED
+========================================================= */
+
+noButton.addEventListener(
+    "click",
+    function() {
+
+        clickSound();
+
+        noButton.textContent =
+            funnyMessages[
+                noClicks %
+                funnyMessages.length
+            ];
+
+        noClicks++;
+
+    }
+);
+
+/* =========================================================
+   ⬅️ BACK TO ENVELOPE
+========================================================= */
+
+document
+    .getElementById(
+        "backButton"
+    )
+    .addEventListener(
+        "click",
+        function() {
+
+            clickSound();
+
+            showPage(2);
+
+        }
+    );
+
+
+</script>
+
+
+</body>
+
+</html>
